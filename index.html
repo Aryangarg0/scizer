@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Task Manager</title>
+  <style>
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #333;
+      color: white;
+    }
+
+    form {
+      border: 1px solid #ddd;
+      margin: 20px auto;
+      padding: 20px;
+      width: 400px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select {
+      display: block;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    input[type="submit"] {
+      background-color: #333;
+      border: none;
+      color: white;
+      padding: 10px;
+    }
+
+    #filter-form {
+      border: 1px solid #ddd;
+      margin: 20px auto;
+      padding: 20px;
+      width: 400px;
+    }
+
+    #filter-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    #filter-form input[type="text"],
+    #filter-form input[type="date"],
+    #filter-form select {
+      display: block;
+      margin-bottom: 20px;
+      width: 100%;
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #filter-form input[type="submit"] {
+      background-color: #333;
+      border: none;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .main-box {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Task Manager</h1>
+  </header>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="task-list">
+    </tbody>
+  </table>
+  <div class="main-box">
+
+    <form id="task-form">
+      <h2>Add Task</h2>
+      <label for="task-name">Name:</label>
+      <input type="text" id="task-name" name="task-name">
+
+      <label for="due-date">Due Date:</label>
+      <input type="date" id="due-date" name="due-date">
+
+      <label for="status">Status:</label>
+      <select id="status" name="status">
+        <option value="Pending">Pending</option>
+        <option value="Completed">Completed</option>
+      </select>
+
+      <input type="submit" value="Add Task">
+    </form>
+
+    <form id="filter-form">
+      <label for="filter-name">Filter by Name:</label>
+      <input type="text" id="filter-name">
+
+      <label for="filter-status">Filter by Status:</label>
+      <select id="filter-status">
+        <option value="">All</option>
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <label for="filter-due-date">Filter by Due Date:</label>
+      <input type="date" id="filter-due-date">
+
+      <input type="submit" value="Filter">
+    </form>
+
+  </div>
+
+
+
+  <script src="index.js"></script>
+</body>
+
+</html>
